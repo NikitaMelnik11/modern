@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CreativeStudio - Innovative Digital Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="images/x-icon"
+    href="https://cdn.icon-icons.com/icons2/2817/PNG/96/brain_artificial_intelligence_ai_technology_robot_icon_179504.png">
+    <style>
+        :root {
+            --primary-color: #6c5ce7;
+            --secondary-color: #a29bfe;
+            --accent-color: #fd79a8;
+            --text-color: #2d3436;
+            --bg-color: #f9f9f9;
+            --gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        header.scrolled {
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary-color);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            transform: scaleX(1);
+        }
+
+        .burger {
+            display: none;
+            cursor: pointer;
+        }
+
+        .burger div {
+            width: 25px;
+            height: 3px;
+            background-color: var(--text-color);
+            margin: 5px;
+            transition: all 0.3s ease;
+        }
+
+        section {
+            padding: 5rem 0;
+        }
+
+        h1, h2 {
+            margin-bottom: 1rem;
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: var(--gradient);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="https://cdn.pixabay.com/photo/2017/12/01/03/17/nature-2990060_640.jpg" viewBox="0 0 100 100" preserveAspectRatio="none"><polygon fill="rgba(255,255,255,0.1)" points="0,100 100,0 100,100"/></svg>');
+            background-size: cover;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .glitch {
+            position: relative;
+        }
+
+        .glitch::before,
+        .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .glitch::before {
+            left: 2px;
+            text-shadow: -2px 0 #ff00c1;
+            clip: rect(44px, 450px, 56px, 0);
+            animation: glitch-anim 5s infinite linear alternate-reverse;
+        }
+
+        .glitch::after {
+            left: -2px;
+            text-shadow: -2px 0 #00fff9, 2px 2px #ff00c1;
+            animation: glitch-anim2 1s infinite linear alternate-reverse;
+        }
+
+        @keyframes glitch-anim {
+            0% {
+                clip: rect(31px, 9999px, 94px, 0);
+            }
+            4.166666667% {
+                clip: rect(91px, 9999px, 100px, 0);
+            }
+            8.333333333% {
+                clip: rect(74px, 9999px, 30px, 0);
+            }
+            12.5% {
+                clip: rect(23px, 9999px, 85px, 0);
+            }
+            16.66666667% {
+                clip: rect(3px, 9999px, 80px, 0);
+            }
+            20.83333333% {
+                clip: rect(39px, 9999px, 11px, 0);
+            }
+            25% {
+                clip: rect(65px, 9999px, 37px, 0);
+            }
+            29.16666667% {
+                clip: rect(85px, 9999px, 44px, 0);
+            }
+            33.33333333% {
+                clip: rect(54px, 9999px, 84px, 0);
+            }
+            37.5% {
+                clip: rect(56px, 9999px, 98px, 0);
+            }
+            41.66666667% {
+                clip: rect(36px, 9999px, 46px, 0);
+            }
+            45.83333333% {
+                clip: rect(66px, 9999px, 33px, 0);
+            }
+            50% {
+                clip: rect(28px, 9999px, 18px, 0);
+            }
+            54.16666667% {
+                clip: rect(63px, 9999px, 71px, 0);
+            }
+            58.33333333% {
+                clip: rect(89px, 9999px, 43px, 0);
+            }
+            62.5% {
+                clip: rect(7px, 9999px, 35px, 0);
+            }
+            66.66666667% {
+                clip: rect(25px, 9999px, 61px, 0);
+            }
+            70.83333333% {
+                clip: rect(23px, 9999px, 75px, 0);
+            }
+            75% {
+                clip: rect(52px, 9999px, 97px, 0);
+            }
+            79.16666667% {
+                clip: rect(13px, 9999px, 69px, 0);
+            }
+            83.33333333% {
+                clip: rect(15px, 9999px, 75px, 0);
+            }
+            87.5% {
+                clip: rect(62px, 9999px, 54px, 0);
+            }
+            91.66666667% {
+                clip: rect(55px, 9999px, 73px, 0);
+            }
+            95.83333333% {
+                clip: rect(7px, 9999px, 57px, 0);
+            }
+            100% {
+                clip: rect(25px, 9999px, 40px, 0);
+            }
+        }
+
+        @keyframes glitch-anim2 {
+            0% {
+                clip: rect(65px, 9999px, 99px, 0);
+            }
+            4.166666667% {
+                clip: rect(84px, 9999px, 43px, 0);
+            }
+            8.333333333% {
+                clip: rect(32px, 9999px, 54px, 0);
+            }
+            12.5% {
+                clip: rect(31px, 9999px, 67px, 0);
+            }
+            16.66666667% {
+                clip: rect(62px, 9999px, 82px, 0);
+            }
+            20.83333333% {
+                clip: rect(13px, 9999px, 96px, 0);
+            }
+            25% {
+                clip: rect(26px, 9999px, 46px, 0);
+            }
+            29.16666667% {
+                clip: rect(7px, 9999px, 24px, 0);
+            }
+            33.33333333% {
+                clip: rect(89px, 9999px, 76px, 0);
+            }
+            37.5% {
+                clip: rect(65px, 9999px, 64px, 0);
+            }
+            41.66666667% {
+                clip: rect(43px, 9999px, 94px, 0);
+            }
+            45.83333333% {
+                clip: rect(41px, 9999px, 87px, 0);
+            }
+            50% {
+                clip: rect(28px, 9999px, 57px, 0);
+            }
+            54.16666667% {
+                clip: rect(54px, 9999px, 20px, 0);
+            }
+            58.33333333% {
+                clip: rect(45px, 9999px, 28px, 0);
+            }
+            62.5% {
+                clip: rect(80px, 9999px, 42px, 0);
+            }
+            66.66666667% {
+                clip: rect(1px, 9999px, 99px, 0);
+            }
+            70.83333333% {
+                clip: rect(22px, 9999px, 53px, 0);
+            }
+            75% {
+                clip: rect(67px, 9999px, 92px, 0);
+            }
+            79.16666667% {
+                clip: rect(24px, 9999px, 78px, 0);
+            }
+            83.33333333% {
+                clip: rect(71px, 9999px, 59px, 0);
+            }
+            87.5% {
+                clip: rect(46px, 9999px, 50px, 0);
+            }
+            91.66666667% {
+                clip: rect(13px, 9999px, 87px, 0);
+            }
+            95.83333333% {
+                clip: rect(90px, 9999px, 79px, 0);
+            }
+            100% {
+                clip: rect(67px, 9999px, 41px, 0);
+            }
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.8rem 2rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: all 0.6s;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .cta-button:hover {
+            background-color: #e84393;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .about-grid, .services-grid, .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .about-item, .service-card, .team-member {
+            background-color: white;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-item::before, .service-card::before, .team-member::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .about-item:hover::before, .service-card:hover::before, .team-member:hover::before {
+            opacity: 1;
+        }
+
+        .about-item:hover, .service-card:hover, .team-member:hover {
+            transform: translateY(-10px);
+        }
+
+        .about-item i, .service-card i, .team-member i {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .portfolio-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(108, 92, 231, 0.9);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .portfolio-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+
+        #contact-form {
+            display: grid;
+            gap: 1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        #contact-form input,
+        #contact-form textarea {
+            width: 100%;
+            padding: 1rem;
+            border: none;
+            border-radius: 5px;
+            background-color: #f0f0f0;
+            transition: all 0.3s ease;
+        }
+
+        #contact-form input:focus,
+        #contact-form textarea:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px var(--primary-color);
+        }
+
+        .submit-button {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .submit-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: all 0.6s;
+        }
+
+        .submit-button:hover::before {
+            left: 100%;
+        }
+
+        .submit-button:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        footer {
+            background-color: var(--text-color);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .fade-in.appear {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary-color);
+            margin: 10px auto 0;
+        }
+
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .testimonial {
+            text-align: center;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-top: 2rem;
+        }
+
+        .testimonial img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial p {
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-author {
+            font-weight: bold;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .blog-post {
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .blog-post:hover {
+            transform: translateY(-10px);
+        }
+
+        .blog-post img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .blog-content {
+            padding: 1.5rem;
+        }
+
+        .blog-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .blog-excerpt {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .read-more {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        @media screen and (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                right: -100%;
+                height: 100vh;
+                top: 0;
+                background-color: rgba(255, 255, 255, 0.95);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 50%;
+                transition: right 0.5s ease;
+                justify-content: center;
+            }
+
+            .nav-links li {
+                opacity: 0;
+                margin: 1.5rem 0;
+            }
+
+            .burger {
+                display: block;
+                z-index: 1001;
+            }
+
+            .nav-active {
+                right: 0;
+            }
+        }
+
+        @keyframes navLinkFade {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0px);
+            }
+        }
+
+        .toggle .line1 {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .toggle .line2 {
+            opacity: 0;
+        }
+
+        .toggle .line3 {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            animation: bounce 2s infinite;
+        }
+
+        .scroll-indicator::before {
+            content: '';
+            width: 40px;
+            height: 40px;
+            background-color: transparent;
+            border: 2px solid white;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .scroll-indicator::after {
+            content: '';
+            width: 10px;
+            height: 10px;
+            background-color: white;
+            border-radius: 50%;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-20px);
+            }
+            60% {
+                transform: translateY(-10px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="#" class="logo">CreativeStudio</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="burger" aria-label="Toggle menu">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <h1 class="glitch" data-text="Creative Innovation">Creative Innovation</h1>
+            <p>Pushing boundaries in digital design</p>
+            <a href="#contact" class="cta-button">Start a Project</a>
+            <div class="scroll-indicator"></div>
+        </section>
+
+        <section id="about" class="container">
+            <h2 class="section-title fade-in">About Us</h2>
+            <div class="about-grid">
+                <div class="about-item fade-in">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>Innovative Ideas</h3>
+                    <p>Crafting unique solutions that set new industry standards.</p>
+                </div>
+                <div class="about-item fade-in">
+                    <i class="fas fa-code"></i>
+                    <h3>Cutting-edge Tech</h3>
+                    <p>Leveraging the latest technologies for optimal performance.</p>
+                </div>
+                <div class="about-item fade-in">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Growth Driven</h3>
+                    <p>Focused on scalable solutions that grow with your business.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="container">
+            <h2 class="section-title fade-in">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <i class="fas fa-paint-brush"></i>
+                    <h3>Web Design</h3>
+                    <p>Crafting visually stunning and user-friendly websites that leave a lasting impression.</p>
+                </div>
+                <div class="service-card fade-in">
+                    <i class="fas fa-laptop-code"></i>
+                    <h3>Web Development</h3>
+                    <p>Building robust, scalable web applications using the latest technologies and best practices.</p>
+                </div>
+                <div class="service-card fade-in">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Mobile Apps</h3>
+                    <p>Developing intuitive and powerful mobile applications for iOS and Android platforms.</p>
+                </div>
+                <div class="service-card fade-in">
+                    <i class="fas fa-search"></i>
+                    <h3>SEO Optimization</h3>
+                    <p>Improving your website's visibility and ranking in search engine results pages.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio" class="container">
+            <h2 class="section-title fade-in">Our Portfolio</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-item fade-in">
+                    <img src="https://cdn.pixabay.com/photo/2023/05/08/08/41/ai-7977960_1280.jpg" alt="Project 1">
+                    <div class="portfolio-overlay">
+                        <h3>Project 1</h3>
+                        <p>Web Design</p>
+                    </div>
+                </div>
+                <div class="portfolio-item fade-in">
+                    <img src="https://cdn.pixabay.com/photo/2024/07/25/03/26/ai-generated-8920129_640.jpg" alt="Project 2">
+                    <div class="portfolio-overlay">
+                        <h3>Project 2</h3>
+                        <p>Web Development</p>
+                    </div>
+                </div>
+                <div class="portfolio-item fade-in">
+                    <img src="https://cdn.pixabay.com/photo/2019/12/08/21/25/aliens-4682277_640.jpg" alt="Project 3">
+                    <div class="portfolio-overlay">
+                        <h3>Project 3</h3>
+                        <p>Mobile App</p>
+                    </div>
+                </div>
+                <div class="portfolio-item fade-in">
+                    <img src="https://cdn.pixabay.com/photo/2024/04/19/16/51/ai-generated-8706711_640.jpg" alt="Project 4">
+                    <div class="portfolio-overlay">
+                        <h3>Project 4</h3>
+                        <p>SEO Optimization</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="team" class="container">
+            <h2 class="section-title fade-in">Our Team</h2>
+            <div class="team-grid">
+                <div class="team-member fade-in">
+                    <img src="https://cdn.pixabay.com/photo/2017/05/18/08/25/girl-2322901_640.jpg" alt="Team Member 1">
+                    <h3>John Doe</h3>
+                    <p>Lead Designer</p>
+                </div>
+                <div class="team-member fade-in">
+                    <img src="https://cdn.pixabay.com/photo/2017/02/16/23/10/smile-2072907_640.jpg  " alt="Team Member 2">
+                    <h3>Jane Smith</h3>
+                    <p>Senior Developer</p>
+                </div>
+                <div class="team-member fade-in">
+                    <img src="https://cdn.pixabay.com/photo/2017/08/03/10/59/nature-2575575_640.jpg" alt="Team Member 3">
+                    <h3>Mike Johnson</h3>
+                    <p>Project Manager</p>
+                </div>
+                <div class="team-member fade-in">
+                    <img src="https://cdn.pixabay.com/photo/2022/11/08/06/26/woman-7577808_640.jpg" alt="Team Member 4">
+                    <h3>Emily Brown</h3>
+                    <p>UX Specialist</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="container">
+            <h2 class="section-title fade-in">Client Testimonials</h2>
+            <div class="testimonial fade-in">
+                <img src="https://cdn.pixabay.com/photo/2018/03/20/06/47/people-3242369_640.jpg" alt="Client 1">
+                <p>"CreativeStudio transformed our online presence. Their innovative approach and attention to detail exceeded our expectations."</p>
+                <p class="testimonial-author">- Sarah Johnson, CEO of TechCorp</p>
+            </div>
+            <div class="stats">
+                <div class="stat-item fade-in">
+                    <p class="stat-number">100+</p>
+                    <p>Projects Completed</p>
+                </div>
+                <div class="stat-item fade-in">
+                    <p class="stat-number">50+</p>
+                    <p>Happy Clients</p>
+                </div>
+                <div class="stat-item fade-in">
+                    <p class="stat-number">5+</p>
+                    <p>Years of Experience</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="blog" class="container">
+            <h2 class="section-title fade-in">Latest from Our Blog</h2>
+            <div class="blog-grid">
+                <div class="blog-post fade-in">
+                    <img src="https://cdn.pixabay.com/photo/2018/04/15/07/59/car-3321044_640.jpg" alt="Blog Post 1">
+                    <div class="blog-content">
+                        <h3 class="blog-title">The Future of Web Design</h3>
+                        <p class="blog-excerpt">Exploring upcoming trends and technologies shaping the web design landscape.</p>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                </div>
+                <div class="blog-post fade-in">
+                    <img src="https://cdn.pixabay.com/photo/2016/06/24/10/47/house-1477041_640.jpg" alt="Blog Post 2">
+                    <div class="blog-content">
+                        <h3 class="blog-title">Optimizing Website Performance</h3>
+                        <p class="blog-excerpt">Tips and tricks to enhance your website's speed and user experience.</p>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                </div>
+                <div class="blog-post fade-in">
+                    <img src="https://cdn.pixabay.com/photo/2019/06/30/21/25/smart-4308821_640.jpg" alt="Blog Post 3">
+                    <div class="blog-content">
+                        <h3 class="blog-title">The Importance of Mobile-First Design</h3>
+                        <p class="blog-excerpt">Why prioritizing mobile experiences is crucial in today's digital landscape.</p>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="container">
+            <h2 class="section-title fade-in">Get in Touch</h2>
+            <form id="contact-form" class="fade-in">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit" class="submit-button">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 CreativeStudio. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+    <script>
+        // Mobile menu toggle
+        const navSlide = () => {
+            const burger = document.querySelector('.burger');
+            const nav = document.querySelector('.nav-links');
+            const navLinks = document.querySelectorAll('.nav-links li');
+
+            burger.addEventListener('click', () => {
+                // Toggle Nav
+                nav.classList.toggle('nav-active');
+
+                // Animate Links
+                navLinks.forEach((link, index) => {
+                    if (link.style.animation) {
+                        link.style.animation = '';
+                    } else {
+                        link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+                    }
+                });
+
+                // Burger Animation
+                burger.classList.toggle('toggle');
+            });
+        };
+
+        navSlide();
+
+        // Scroll reveal animation
+        const faders = document.querySelectorAll('.fade-in');
+        const sliders = document.querySelectorAll('.slide-in');
+
+        const appearOptions = {
+            threshold: 0,
+            rootMargin: "0px 0px -100px 0px"
+        };
+
+        const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) {
+                    return;
+                } else {
+                    entry.target.classList.add('appear');
+                    appearOnScroll.unobserve(entry.target);
+                }
+            });
+        }, appearOptions);
+
+        faders.forEach(fader => {
+            appearOnScroll.observe(fader);
+        });
+
+        sliders.forEach(slider => {
+            appearOnScroll.observe(slider);
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Form submission
+        const contactForm = document.getElementById('contact-form');
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            // Here you would typically send the form data to a server
+            // For this example, we'll just log it to the console
+            const formData = new FormData(contactForm);
+            console.log('Form submitted with data:', Object.fromEntries(formData));
+            alert('Thank you for your message! We will get back to you soon.');
+            contactForm.reset();
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            header.classList.toggle('scrolled', window.scrollY > 0);
+        });
+
+        // Parallax effect
+        window.addEventListener('scroll', () => {
+            const parallax = document.querySelector('.parallax');
+            let scrollPosition = window.pageYOffset;
+            parallax.style.transform = 'translateY(' + scrollPosition * 0.5 + 'px)';
+        });
+
+        // 3D tilt effect for cards
+        const cards = document.querySelectorAll('.about-item, .service-card, .team-member, .blog-post');
+        cards.forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+
+                const deltaX = (x - centerX) / centerX;
+                const deltaY = (y - centerY) / centerY;
+
+                card.style.transform = `perspective(1000px) rotateX(${deltaY * 10}deg) rotateY(${-deltaX * 10}deg) scale3d(1.05, 1.05, 1.05)`;
+            });
+
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
+            });
+        });
+
+        // Animate stats on scroll
+        const stats = document.querySelectorAll('.stat-number');
+        const animateStats = () => {
+            stats.forEach(stat => {
+                const target = parseInt(stat.textContent);
+                let count = 0;
+                const duration = 2000; // 2 seconds
+                const increment = target / (duration / 16); // 60 fps
+
+                const updateCount = () => {
+                    if (count < target) {
+                        count += increment;
+                        stat.textContent = Math.round(count);
+                        requestAnimationFrame(updateCount);
+                    } else {
+                        stat.textContent = target;
+                    }
+                };
+
+                updateCount();
+            });
+        };
+
+        const statsSection = document.querySelector('#testimonials');
+        const statsSectionObserver = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+                animateStats();
+                statsSectionObserver.unobserve(statsSection);
+            }
+        });
+
+        statsSectionObserver.observe(statsSection);
+    </script>
+</body>
+</html>
